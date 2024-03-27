@@ -18,7 +18,7 @@ This composite action takes in the required inputs from your workflow, builds a 
       uses: actions/checkout@v3
 
     - name: Build and push to docker hub
-      uses: Makinates/eddy-gh-action@main
+      uses: Makinates/eddy-gh-actions@main
       with:
         docker-hub-username: ${{ secrets.DOCKERHUB_USERNAME }}
         docker-hub-password: ${{ secrets.DOCKERHUB_TOKEN }}
