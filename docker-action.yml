@@ -2,10 +2,10 @@ name: 'Push to Docker Hub'
 description: 'Push to Docker Hub'
 
 inputs:
-  dockerhub-username:
+  DOCKERHUB_USERNAME:
     description: 'DockerHub username'
     required: true
-  dockerhub-token:
+  DOCKERHUB_TOKEN:
     description: 'DockerHub token'
     required: true
   image-name:
@@ -23,9 +23,9 @@ runs:
     - uses: mr-smithers-excellent/docker-build-push@v6
       name: Build & push Docker image
       with:
-        image: ${{ inputs.dockerhub-username }}/${{ inputs.image-name }}
+        image: ${{ inputs.DOCKERHUB_USERNAME }}/${{ inputs.image-name }}
         tags: ${{ inputs.image-tag }}
         registry: docker.io
         dockerfile: ${{ inputs.dockerfile-path }}
-        username: ${{ inputs.dockerhub-username }}
-        password: ${{ inputs.dockerhub-token }}
+        username: ${{ inputs.DOCKERHUB_USERNAME }}
+        password: ${{ inputs.DOCKERHUB_TOKEN }}
